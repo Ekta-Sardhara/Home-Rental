@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading - Home Rental System</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* LOGO IMAGE */
+.logo {
+    width: 400px;
+    max-width: 90%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    filter: drop-shadow(0 0 20px #38bdf8);
+}
+
+/* SHOW AFTER LOAD */
+.logo.show {
+    opacity: 1;
+}
+
+/* TEXT */
+.text {
+    position: absolute;
+    bottom: 50px;
+    color: #38bdf8;
+    font-size: 20px;
+    letter-spacing: 2px;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%,100% { text-shadow: 0 0 5px #38bdf8; }
+    50% { text-shadow: 0 0 20px #38bdf8; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ CORRECT IMAGE -->
+<img src="logo.png" class="logo" id="logo">
+
+<div class="text">Welcome to Home Rental System</div>
+
+<script>
+let img = document.getElementById("logo");
+
+// ✅ WAIT UNTIL IMAGE LOADS
+img.onload = function() {
+    img.classList.add("show");
+
+    // redirect after showing logo
+    setTimeout(function(){
+        window.location.href = "index.php";
+    }, 2000);
+};
+
+// ❌ IF IMAGE NOT FOUND
+img.onerror = function() {
+    alert("Logo not loading! Check file name (logo.png) and location.");
+};
+</script>
+
+</body>
+</html>

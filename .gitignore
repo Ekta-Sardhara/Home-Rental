@@ -1,0 +1,13 @@
+# Executables and Installers
+*.msi
+*.exe
+*.dll
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
